@@ -8,10 +8,10 @@ class Triangle
     @scalene = scalene
   end
 
-  def kind 
-  end 
+  def kind
+  end
 
   class TriangleError < StandardError
-  end 
+  end
 
 end
