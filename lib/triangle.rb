@@ -9,23 +9,21 @@ class Triangle
   end
 
   def kind
-    if x + y < z || y + z < x || z + x < y 
-      raise TriangleError 
-    elsif x == y && y == z 
+    if x + y < z || y + z < x || z + x < y
+      raise TriangleError
+    elsif x == y && y == z
       :equilateral
-    elsif x == y || y == z || x == z 
+    elsif x == y || y == z || x == z
       :isosceles
-    else 
+    else
       :scalene
-    end 
-  end 
+    end
+  end
 end
 
   class TriangleError < StandardError
     def kind
       "This is not a triangle, please double check your work"
-    end 
-      
-  end
+    end
 
 end
