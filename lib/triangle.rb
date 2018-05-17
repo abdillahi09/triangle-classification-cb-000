@@ -9,12 +9,23 @@ class Triangle
   end
 
   def kind
-    if equilateral != isosceles
-      raise TriangleError
-    end
-  end
+    if x + y < z || y + z < x || z + x < y 
+      raise TriangleError 
+    elsif x == y && y == z 
+      :equilateral
+    elsif x == y || y == z || x == z 
+      :isosceles
+    else 
+      :scalene
+    end 
+  end 
+end
 
   class TriangleError < StandardError
+    def kind
+      "This is not a triangle, please double check your work"
+    end 
+      
   end
 
 end
