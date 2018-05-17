@@ -9,6 +9,9 @@ class Triangle
   end
 
   def kind
+    if equilateral != isosceles && equilateral != scalene
+      raise TriangleError
+    end
   end
 
   class TriangleError < StandardError
