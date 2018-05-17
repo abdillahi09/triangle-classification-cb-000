@@ -15,7 +15,7 @@ class Triangle
       :equilateral
     elsif x == y || y == z || x == z
       :isosceles
-    else
+    elsif 
       :scalene
     end
   end
