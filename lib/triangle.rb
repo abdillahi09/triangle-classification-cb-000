@@ -1,5 +1,5 @@
 class Triangle
-  # write code here
+
   attr_accessor :x, :y, :z
 
   def initialize(x, y, z)
@@ -9,23 +9,22 @@ class Triangle
   end
 
   def kind
-    if x + y < z || y + z < x || z + x < y
+    if @x <= 0 || @y <= 0 || @z <= 0
       raise TriangleError
-    elsif x == y && y == z
+    elsif @x + @y <= @z || @x + @z <= @y || @y + @z <= @x
+      raise TriangleError
+    elsif @x == @y && @x == @z
       :equilateral
-    elsif x == y || y == z || x == z
+    elsif (@x == @y && @x != @z) || (@x == @z && @x != @y) || (@y == @z && @y != @x)
       :isosceles
-    elsif x != y && y != z && x != z 
+    else
       :scalene
-    else x = 0
-      raise TriangleError
     end
   end
 end
 
-  class TriangleError < StandardError
-    def kind
-      "This is not a triangle, please double check your work"
-    end
-
+class TriangleError < StandardError
+  def message
+    "invalid lengths for a triangle"
+  end
 end
