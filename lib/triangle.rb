@@ -5,7 +5,13 @@ class Triangle
   def initialize(equilateral, isosceles, scalene)
     @equilateral = equilateral
     @isosceles = isosceles
-    @scalene = scalene 
+    @scalene = scalene
+  end
+
+  def kind 
   end 
-    
+
+  class TriangleError < StandardError
+  end 
+
 end
