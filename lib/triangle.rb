@@ -1,6 +1,6 @@
 class Triangle
   # write code here
-  attr_accessor :equilateral, :isosceles, :scalene
+  attr_accessor :equilateral, :isosceles, :scalen
 
   def initialize(equilateral, isosceles, scalene)
     @equilateral = equilateral
@@ -9,7 +9,7 @@ class Triangle
   end
 
   def kind
-    if equilateral != isosceles && equilateral != scalene
+    if equilateral != isosceles
       raise TriangleError
     end
   end
